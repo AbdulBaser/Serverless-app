@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>My Web Saite</title>
+    </head>
+    <body>
+        <form>
+            <input type="text" name="name">
+            <button>Send Me</button>
+        </form>  
+        <script>
+             form = document.querySelector('form')
+            form.addEventListener('submit', async(e) => {
+            e.preventDefault()
+                //get value
+            const name = form.name.value
+            try {
+                fetch("https://qnxodta496.execute-api.ap-south-1.amazonaws.com/prod/hello/" + name, {
+                    method: 'GET',
+
+                }).then(location.replace("https://qnxodta496.execute-api.ap-south-1.amazonaws.com/prod/hello/" + name))
+
+
+            } catch (error) {
+                console.log(error.message)
+            }
+        })
+
+        </script>
+    </body>
+</html>
